@@ -1,0 +1,10 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+*.yml
+*.html
+*.Rproj
+
+/.quarto/
+/lab1_files/
