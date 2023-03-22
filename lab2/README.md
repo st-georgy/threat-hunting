@@ -28,6 +28,8 @@
 
 Работу целесообразно разделить на 2 этапа: сбора собственных данных и сбора данных о нежелательном трафике.
 
+<img width="960" alt="wireshark" src="https://user-images.githubusercontent.com/83448561/226827205-16e8c4fb-1a60-43ce-ab85-fc719914f24b.png">
+
 ## Шаги
 
 1\. Собрать сетевой трафик (объемом не менее 100 Мб) с помощью сетевого анализатора Wireshark
@@ -43,6 +45,8 @@
     awk '/^[^#]/ {print $10}' dns.log >> dns
 
 Полученные файлы:
+
+<img width="639" alt="files" src="https://user-images.githubusercontent.com/83448561/226827274-c1f01960-7f72-4ce8-84b1-f324bc3493ea.png">
 
 3\. Собрать данные об источниках нежелательного трафика с github -- [https://github.com/StevenBlack/hosts/blob/master/data/KADhosts/hosts](https://github.com/StevenBlack/hosts/tree/master/data)
 
@@ -89,6 +93,8 @@ if __name__ == '__main__':
 Подсчитали процент нежелательного трафика
 
 Получены результаты:
+
+<img width="472" alt="percent" src="https://user-images.githubusercontent.com/83448561/226827292-7b863290-4ae7-4a8a-bc5b-ed6fdcbc3c54.png">
 
 ## Вывод
 
