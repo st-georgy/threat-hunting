@@ -36,7 +36,7 @@
 ``` bash
 sudo sysctl -w vm.max_map_count=262144
 ```
-![alt text](https://github.com/st-georgy/threat-hunting/blob/master/lab3/img/1.png)
+![alt text](https://github.com/st-georgy/threat-hunting/blob/main/lab3/img/1.png)
 
 Создадим файл .env в новой директории со следующим содержимым (в целях безопасности пароли не указаны):
 ```yml
@@ -150,7 +150,7 @@ services:
     environment:
       - node.name=es01
       - cluster.name=${CLUSTER_NAME}
-      - cluster.initial_master_nodes=es01,es02,es03
+      - cluster.initial_main_nodes=es01,es02,es03
       - discovery.seed_hosts=es02,es03
       - ELASTIC_PASSWORD=${ELASTIC_PASSWORD}
       - bootstrap.memory_lock=true
@@ -190,7 +190,7 @@ services:
     environment:
       - node.name=es02
       - cluster.name=${CLUSTER_NAME}
-      - cluster.initial_master_nodes=es01,es02,es03
+      - cluster.initial_main_nodes=es01,es02,es03
       - discovery.seed_hosts=es01,es03
       - bootstrap.memory_lock=true
       - xpack.security.enabled=true
@@ -229,7 +229,7 @@ services:
     environment:
       - node.name=es03
       - cluster.name=${CLUSTER_NAME}
-      - cluster.initial_master_nodes=es01,es02,es03
+      - cluster.initial_main_nodes=es01,es02,es03
       - discovery.seed_hosts=es01,es02
       - bootstrap.memory_lock=true
       - xpack.security.enabled=true
@@ -311,12 +311,12 @@ docker compose up -d
 ```bash
 docker-compose ps
 ```
-![alt text](https://github.com/st-georgy/threat-hunting/blob/master/lab3/img/2.png)
+![alt text](https://github.com/st-georgy/threat-hunting/blob/main/lab3/img/2.png)
 
 Также проверим состояние Dashboard Kibana, перейдя по адресу:
 ```localhost:5601```
 
-![alt text](https://github.com/st-georgy/threat-hunting/blob/master/lab3/img/3.png)
+![alt text](https://github.com/st-georgy/threat-hunting/blob/main/lab3/img/3.png)
 
 Дождемся, пока он будет доступен и перейдем к следующему шагу.
 
@@ -324,7 +324,7 @@ docker-compose ps
 
 Когда сервер Kibana готов, мы попадаем на страницу авторизации:
 
-![alt text](https://github.com/st-georgy/threat-hunting/blob/master/lab3/img/4.png)
+![alt text](https://github.com/st-georgy/threat-hunting/blob/main/lab3/img/4.png)
 
 Заходим за пользователя elastic.
 
@@ -403,13 +403,13 @@ output.elasticsearch:
 
 Проверяем работу Packetbeat и Filebeat в Kibana:
 
-![alt text](https://github.com/st-georgy/threat-hunting/blob/master/lab3/img/5.png)
+![alt text](https://github.com/st-georgy/threat-hunting/blob/main/lab3/img/5.png)
 
 ### Шаг 5
 
 Создаем средства для просмотра данных:
 
-![alt text](https://github.com/st-georgy/threat-hunting/blob/master/lab3/img/6.png)
+![alt text](https://github.com/st-georgy/threat-hunting/blob/main/lab3/img/6.png)
 
 ### Шаг 6
 
@@ -417,11 +417,11 @@ output.elasticsearch:
 
 Packetbeat:
 
-![alt text](https://github.com/st-georgy/threat-hunting/blob/master/lab3/img/7.png)
+![alt text](https://github.com/st-georgy/threat-hunting/blob/main/lab3/img/7.png)
 
 Filebeat:
 
-![alt text](https://github.com/st-georgy/threat-hunting/blob/master/lab3/img/8.png)
+![alt text](https://github.com/st-georgy/threat-hunting/blob/main/lab3/img/8.png)
 
 ## Оценка результата
 
