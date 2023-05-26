@@ -1,5 +1,5 @@
 ---
-title: "Развертывание системы мониторинга ELK Stack (ElasticSearch)"
+title: "Развертывание Threat intelligence Platform OpenCTI"
 author: Георгий Жидков
 format: 
     md:
